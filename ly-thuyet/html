@@ -1,0 +1,140 @@
+# Cấu trúc tiêu chuẩn file HTML gồm 4 phần:
+    DOCTYPE khai báo cho trình duyệt hiểu về phiên bản HTML đang được sử dụng
+    Thẻ <html> chứa toàn bộ nội dung trang web
+    Thẻ <head> chứa các thẻ <meta>
+    Thẻ <body> chứa nội dung hiển thị ra nội dung trình duyệt
+
+
+# Sử dụng các thẻ meta
+    Thẻ meta charset dùng để chỉ định bảng mã ký tự sử dụng cho trang web. Thẻ này cần được khai báo đầu tiên trong thẻ <head>.
+    Thẻ meta title dùng để khai báo tiêu đề trang web, tiêu đề này hiển thị trên tab trình duyệt & trong kết quả của các công cụ tìm kiếm
+    Thẻ meta viewport dùng để tối ưu hiển thị giao diện trang web trên nhiều thiết bị. Nếu thiếu thẻ này, trang web có thể hiển thị nhỏ hơn bình thường, bạn cần phải phóng to lên để dễ nhìn hơn.
+    Thẻ meta open graph dùng để cung cấp dữ liệu cho trình thu thập dữ liệu của Facebook, giúp trang web hiển thị đầy đủ thông tin & đẹp mắt hơn khi được chia sẻ lên Facebook.       
+
+
+# Chữ đậm, chữ nghiêng
+    Thẻ <b> sử dụng cho nội dung muốn gây sự chú ý. Nội dung của nó được hiển thị dưới dạng chữ in đậm.
+    Thẻ <strong> thể hiện sự quan trọng, nghiêm trọng, cấp bách, v.v.
+    Thẻ <i> sử dụng cho các trường hợp viết nghiêng theo quy tắc chính tả như: tên một tác phẩm, trích dẫn một câu nói, v.v.
+    Thẻ <em> thể hiện sự nhấn mạnh như: nhấn mạnh từ, nhấn mạnh trọng âm, v.v.
+    Khi phải lựa chọn giữa ngữ nghĩa và styles, nên ưu tiên chọn ngữ nghĩa. Vì styles có thể sửa bằng CSS, còn ngữ nghĩa thì không.
+
+
+
+# Thẻ danh sách
+    Thẻ ul (unordered list, ý nghĩa: “danh sách không có thứ tự”) dùng để thể hiện một danh sách mà số thứ tự trong đó không quan trọng.
+    Thẻ ol (ordered list, ý nghĩa: “danh sách có thứ tự”) dùng để thể hiện một danh sách mà số thứ tự trong đó mang lại ý nghĩa, hoặc có quan trọng số thứ tự.
+    Thẻ li (list item, ý nghĩa: “mục trong danh sách”) được dùng làm thẻ con trong thẻ <ul> hoặc <ol>.
+
+
+
+# Sử dụng liên kết
+    Nếu để trống href thì thẻ <a> sẽ tham chiếu vào trang hiện tại, nếu sử dụng href="#" khi nhấn vào thẻ <a> sẽ lên đầu trang.
+    Có 2 giá trị được sử dụng phổ biến là _self (mở liên kết từ trang hiện tại - mặc định), _blank (mở liên kết trong tab mới). Để tối ưu hơn về hiệu năng và bảo mật, hãy thêm rel="noopener" vào toàn bộ các thẻ a có target="_blank".
+    Ngoài việc được dùng để liên kết tới một URL thì thẻ <a> cũng có thể liên kết tới một số điện thoại, một địa chỉ email. Sử dụng 2 phương thức trong thuộc tính href để làm điều này:
+    - mailto để liên kết tới một email.         Ví dụ: <a href="mailto:example@gmail.com">example@gmail.com</a> <br />
+    - tel để liên kết tới một số điện thoại.    Ví dụ: <a href="tel:0999999999">Gọi cho tôi</a>
+    Khi chưa có URL để thêm vào menu, có thể tạm thời sử dụng href="#!" để giữ chỗ (tránh nhấn vào trang bị tải lại với href="" hoặc bị nhảy lên đầu trang với href="#").
+
+    Hash (hash mark - dấu thăng #) trong URL trỏ trình duyệt tới một vị trí cụ thể trong trang web. Thông thường, bạn sẽ thấy # được sử dụng ở phần sau của một URL.
+    ID (identifier - định danh) là một thuộc tính để tạo định danh duy nhất cho một phần tử HTML trong cùng một trang (theo tiêu chuẩn của W3C).
+
+    Ví dụ, khi nhấn vào:
+    <a href="#meet-laravel">Meet Laravel</a>
+    thì trình duyệt sẽ tới vị trí của thẻ có id="meet-laravel":
+    <h2 id="meet-laravel">Meet Laravel</h2>
+
+    Lưu ý:
+    Không sử được đồng thời nhiều hash (#) trong một URL. Nếu cố tình đưa nhiều hash (nhiều dấu #) vào URL thì chỉ dấu # đầu tiên là có ý nghĩa.
+    Sẽ không có điều gì xảy ra khi nhấn vào một liên kết có hash tham chiếu tới một id không tồn tại.
+    Phần lớn người dùng đã quen với việc một liên kết sẽ có gạch chân. Vì vậy, không nên gạch chân nội dung khi không phải là một liên kết và ngược lại.
+    Nội dung trong liên kết nên ngắn gọn, súc tích, thể hiện rõ ý nghĩa của liên kết. Trình đọc màn hình sẽ đọc to nội dung trong liên kết, không nên chỉ đặt liên kết trong các từ như tại đây, đây, v.v.
+
+
+
+# Sử dụng hình ảnh
+    Thẻ <img> không thực sự chèn hình ảnh vào trang web. Thẻ <img> tạo ra một không gian để hiển thị hình ảnh trong trang web, hình ảnh sẽ được tải từ đường dẫn trong src.
+    Thuộc tính width và height dùng để chỉ định kích thước hiển thị của hình ảnh. Nếu không được chỉ định, hình ảnh sẽ hiển thị với kích thước gốc.
+    Tránh không đặt width và height cho hình ảnh vì có thể gây ra hiện tượng nhảy/giật trên trang web.
+    Tránh đặt width, height sai tỉ lệ ảnh gốc vì có thể làm ảnh hiển thị bị méo, lỗi.
+    Tránh đặt width, height lớn hơn kích thước gốc của ảnh vì có thể làm ảnh hiển thị bị vỡ.
+
+    Thuộc tính alt (alternative - thay thế) dùng để chỉ định văn bản thay thế trong trường hợp hình ảnh không hiển thị.
+    Hình ảnh chỉ mang tính trang trí thì để alt="" (lưu ý là không bỏ thuộc tính alt vì các trình phân tích có thể coi là bạn đã quên thêm thuộc tính này).
+    Khi hình ảnh có kích thước lớn được hiển thị với kích thước nhỏ thì trình duyệt vẫn sẽ phải tải toàn bộ ảnh có kích thước lớn. Điều này làm cho chậm trang web một cách không cần thiết và lãng phí băng thông. Nên để kích thước hình ảnh gốc x 2 lần kích thước hiển thị của nó. 
+
+    Thẻ <figure> được sử dụng để thể hiện hình ảnh trong nội dung tài liệu như hình minh họa, biểu đồ, khối code, v.v. 
+        Cách sử dụng: 
+        <figure>
+            <img src="https://example.com/images/appple.png" alt="Apple" />
+        </figure>
+    Thẻ <img> dùng để hiển thị một hình ảnh, trong khi <figure> dùng để bổ sung ngữ nghĩa cho một hình ảnh. Vì vậy, 2 thẻ này không thể thay thế cho nhau.
+    Thẻ <figcaption> dùng để bổ sung chú thích cho nội dung được thể hiện bằng thẻ <figure>. Ví dụ như chú thích cho một hình ảnh, video, biểu đồ, v.v.
+        Cách sử dụng:
+        <figure>
+            <img src="https://example.com/images/appple.png" alt="Apple" />
+            <figcaption>An Apple</figcaption>
+        </figure>
+
+
+# Thẻ code
+    Thẻ <pre> (preformatted) được sử dụng để giữ nguyên khoảng cách văn bản, ngắt dòng, tab và các ký tự định dạng khác mà trình duyệt web bỏ qua.
+    Thẻ <pre> thường được kết hợp với thẻ <code> để hiển thị khối code trên nội dung trang web.
+    
+    HTML Entities là các chuỗi bắt đầu bằng dấu & và kết thúc bằng dấu ;.           VD: &lt;h1&gt;  ->  <h1>
+    Nó được sử dụng để hiển thị 2 loại ký tự:
+        Các ký tự có ý nghĩa đặc biệt hoặc trùng với các ký tự trong HTML
+        Các ký tự không dễ dàng hoặc không nhập được từ bàn phím. Ví dụ: ©, ™, v.v
+
+    Non-breaking space Entity (&nbsp;) hiển thị giống như một khoảng trống, nhưng khoảng trống này sẽ không bị “bẻ gãy” (breaking) như khoảng trống thông thường 
+    Trường hợp sử dụng &nbsp; đó là khi chúng ta muốn 2 từ luôn được đi kèm với nhau. Ví dụ: Đường vào tim Crush xa như 1000&nbsp;km.
+    Thẻ <code> trong HTML được sử dụng để thể hiện các đoạn code trong nội dung trang web.
+    
+    Có 2 trường hợp sử dụng thẻ <code>:
+    Trong một đoạn văn: 
+    <p>Thẻ <code>&lt;h1&gt;</code> là tiêu đề chính</p>                                 -->Thẻ <h1> là tiêu đề chính
+    <p>Thẻ danh sách là <code>&lt;ul&gt;</code> và <code>&lt;ol&gt;</code></p>          -->Thẻ danh sách là <ul> và <ol>
+    
+    Khối code độc lập: 
+    <pre>
+    <code>&lt;img
+        src=&quot;https://htmlcss.fullstack.edu.vn/assets/f8_icon.png&quot;
+        width=&quot;100&quot;
+        height=&quot;100&quot;
+        alt=&quot;F8&quot;
+    /&gt;</code>
+    </pre>
+        
+==> <img
+        src="https://htmlcss.fullstack.edu.vn/assets/f8_icon.png"
+        width="100"
+        height="100"
+        alt="F8"
+    />
+
+# Highlight code với PrismJS           
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Highlight Code with PrismJS</title>
+        <!-- Bước 1: Nhúng code CSS của PrismJS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-okaidia.min.css">         <!-- Lấy link themes tại đây: https://www.jsdelivr.com/package/npm/prismjs?tab=files&path=themes -->
+    </head>
+    <body>
+    <!-- Bước 3: Thêm class="language-html" cho thẻ <code> -->
+    <pre>
+    <code class="language-html">&lt;img
+        src=&quot;https://htmlcss.fullstack.edu.vn/assets/f8_icon.png&quot;
+        width=&quot;100&quot;
+        height=&quot;100&quot;
+        alt=&quot;F8&quot;
+    /&gt;</code>
+    </pre>
+        <!-- Bước 2: Nhúng code JavaScript của PrismJS -->
+        <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    </body>
+    </html>
+

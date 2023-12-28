@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Thông tin sách đã mượn</title>
+    <style>
+        body {
+            /* Thay đổi đường dẫn sau đây bằng đường dẫn thực tế đến hình ảnh nền của bạn */
+            background-image: url('background.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .header {
+            background-color: #add8e6; /* Màu nền của tiêu đề */
+            text-align: center; /* Căn giữa tiêu đề */
+            padding: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #ffffff; /* Màu nền của bảng */
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 15px;
+            text-align: center; /* Căn giữa các giá trị trong cột và tiêu đề cột */
+        }
+        img {
+            width: 50px; /* Chiều rộng của hình ảnh */
+            height: auto; /* Tự động điều chỉnh chiều cao để giữ nguyên tỷ lệ */
+        }
+        button {
+            display: block; 
+            width: 200px; 
+            height: 50px; 
+            margin: 20px auto; /* Căn giữa nút và tạo khoảng cách */
+            background-color: #4CAF50; /* Màu nền của nút */
+            color: white; /* Màu chữ của nút */
+            font-size: 20px; /* Kích thước chữ của nút */
+            border: none;
+            cursor: pointer;
+        }
+        button:disabled {
+            background-color: #cccccc; /* Màu nền của nút khi bị vô hiệu hóa */
+        }
+    </style>
+    <script>
+        function check() {
+            var checkboxes = document.getElementsByName('check');
+            var checkboxesChecked = Array.prototype.slice.call(checkboxes).some(x => x.checked);
+            document.getElementById('cancel').disabled = !checkboxesChecked;
+        }
+        function cancel() {
+            alert('Huỷ mượn thành công!');
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h2>Thông tin sách đã mượn</h2>
+    </div>
+    <table>
+        <tr>
+            <th>Chọn</th>
+            <th>Hình ảnh</th>
+            <th>Tên sách</th>
+            <th>Tác giả</th>
+            <th>Nhà xuất bản</th>
+            <th>Năm xuất bản</th>
+        </tr>
+        <!-- Thêm thông tin sách vào đây -->
+        <tr>
+            <td><input type="checkbox" name="check" onchange="check()"></td>
+            <td><img src="book.jpg" alt="Sách 1"></td>
+            <td>Sách 1</td>
+            <td>Tác giả 1</td>
+            <td>Nhà xuất bản 1</td>
+            <td>2023</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="check" onchange="check()"></td>
+            <td><img src="book.jpg" alt="Sách 2"></td>
+            <td>Sách 2</td>
+            <td>Tác giả 2</td>
+            <td>Nhà xuất bản 2</td>
+            <td>2022</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="check" onchange="check()"></td>
+            <td><img src="book.jpg" alt="Sách 2"></td>
+            <td>Sách 2</td>
+            <td>Tác giả 2</td>
+            <td>Nhà xuất bản 2</td>
+            <td>2022</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="check" onchange="check()"></td>
+            <td><img src="book.jpg" alt="Sách 2"></td>
+            <td>Sách 2</td>
+            <td>Tác giả 2</td>
+            <td>Nhà xuất bản 2</td>
+            <td>2022</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="check" onchange="check()"></td>
+            <td><img src="book.jpg" alt="Sách 2"></td>
+            <td>Sách 2</td>
+            <td>Tác giả 2</td>
+            <td>Nhà xuất bản 2</td>
+            <td>2022</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="check" onchange="check()"></td>
+            <td><img src="book.jpg" alt="Sách 2"></td>
+            <td>Sách 2</td>
+            <td>Tác giả 2</td>
+            <td>Nhà xuất bản 2</td>
+            <td>2022</td>
+        </tr>
+    </table>
+    <button id="cancel" disabled onclick="cancel()">Huỷ mượn</button>
+</body>
+</html>

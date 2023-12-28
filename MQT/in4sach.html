@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Thư viện sách</title>
+    <style>
+        body {
+            background-image: url('bgbackend.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; 
+            min-height: 90vh; 
+        }
+        
+        .book {
+            display: flex;
+            margin-bottom: 20px;
+            border: 2px solid black; 
+            padding: 10px;
+            background-color: rgb(238, 228, 228);
+        }
+        .book img {
+            margin-right: 20px;
+        }
+        .book-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .book-info p {
+            margin: 5px 0;
+        }
+        .book-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 20px;
+            padding-bottom: 50px; 
+        }
+        h1 {
+            text-align: center;
+        }
+        button {
+            font-size: 20px;
+            background-color: orange;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            display: block;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+        }
+        .button-container {
+    text-align: center;
+}
+    </style>
+    <script>
+        function checkBooks() {
+            var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            var checkedOne = Array.prototype.slice.call(checkboxes).some(x => x.checked);
+            if (!checkedOne) {
+                alert('Bạn phải chọn ít nhất 1 sách!');
+                return false;
+            }
+            alert('Yêu cầu mượn sách đã được gửi thành công!');
+            return true;
+        }
+        function searchBooks() {
+    var inputTitle, filterTitle, books, title, i, txtValueTitle;
+    inputTitle = document.getElementById('searchInputTitle');
+    filterTitle = inputTitle.value.toUpperCase();
+    books = document.getElementsByClassName('book');
+    for (i = 0; i < books.length; i++) {
+        title = books[i].getElementsByTagName('h2')[0];
+        txtValueTitle = title.textContent || title.innerText;
+        if (txtValueTitle.toUpperCase().indexOf(filterTitle) > -1) {
+            books[i].style.display = "";
+        } else {
+            books[i].style.display = "none";
+        }
+    }
+}
+e
+    </script>
+</head>
+<body>
+
+        <h1>Thư viện sách</h1>
+        <div>
+            <input type="text" id="searchInputTitle" onkeyup="searchBooks()" placeholder="Tìm kiếm tên sách...">
+        </div>
+        <br>
+        <div class="book-container">
+            <!-- Bắt đầu sách 1 -->
+            <div class="book">
+                <img src="book.jpg" alt="Ảnh của sách 1" width="150" height="230">
+                <div class="book-info">
+                    <h2>Name</h2>
+                    <p>Tác giả: Author</p>
+                    <p>NXB: NXB's Name </p>
+                    <p>Năm xuất bản: Year</p>
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="book1" name="book1">
+                        <label for="book1">Chọn sách này</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="book">
+                <img src="book.jpg" alt="Ảnh của sách 2" width="150" height="230">
+                <div class="book-info">
+                    <h2>Name</h2>
+                    <p>Tác giả: Author</p>
+                    <p>NXB: NXB's Name </p>
+                    <p>Năm xuất bản: Year</p>
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="book2" name="book2">
+                        <label for="book2">Chọn sách này</label>
+                    </div>
+                </div>
+            </div>
+            <div class="book">
+                <img src="book.jpg" alt="Ảnh của sách 2" width="150" height="230">
+                <div class="book-info">
+                    <h2>Name</h2>
+                    <p>Tác giả: Author</p>
+                    <p>NXB: NXB's Name </p>
+                    <p>Năm xuất bản: Year</p>
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="book2" name="book2">
+                        <label for="book2">Chọn sách này</label>
+                    </div>
+                </div>
+            </div>
+            <div class="book">
+                <img src="book.jpg" alt="Ảnh của sách 2" width="150" height="230">
+                <div class="book-info">
+                    <h2>Name</h2>
+                    <p>Tác giả: Author</p>
+                    <p>NXB: NXB's Name </p>
+                    <p>Năm xuất bản: Year</p>
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="book2" name="book2">
+                        <label for="book2">Chọn sách này</label>
+                    </div>
+                </div>
+            </div>
+            <div class="book">
+                <img src="book.jpg" alt="Ảnh của sách 2" width="150" height="230">
+                <div class="book-info">
+                    <h2>Name</h2>
+                    <p>Tác giả: Author</p>
+                    <p>NXB: NXB's Name </p>
+                    <p>Năm xuất bản: Year</p>
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="book2" name="book2">
+                        <label for="book2">Chọn sách này</label>
+                    </div>
+                </div>
+            </div>
+            <div class="book">
+                <img src="book.jpg" alt="Ảnh của sách 2" width="150" height="230">
+                <div class="book-info">
+                    <h2>Name</h2>
+                    <p>Tác giả: Author</p>
+                    <p>NXB: NXB's Name </p>
+                    <p>Năm xuất bản: Year</p>
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="book2" name="book2">
+                        <label for="book2">Chọn sách này</label>
+                    </div>
+                </div>
+            </div>
+            <div class="book">
+                <img src="book.jpg" alt="Ảnh của sách 2" width="150" height="230">
+                <div class="book-info">
+                    <h2>Name</h2>
+                    <p>Tác giả: Author</p>
+                    <p>NXB: NXB's Name </p>
+                    <p>Năm xuất bản: Year</p>
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="book2" name="book2">
+                        <label for="book2">Chọn sách này</label>
+                    </div>
+                </div>
+            </div>
+            <div class="book">
+                <img src="book.jpg" alt="Ảnh của sách 2" width="150" height="230">
+                <div class="book-info">
+                    <h2>Name</h2>
+                    <p>Tác giả: Author</p>
+                    <p>NXB: NXB's Name </p>
+                    <p>Năm xuất bản: Year</p>
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="book2" name="book2">
+                        <label for="book2">Chọn sách này</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="button-container">
+            <button onclick="return checkBooks()">Xác nhận</button>
+        </div>
+</body>
+</html>
